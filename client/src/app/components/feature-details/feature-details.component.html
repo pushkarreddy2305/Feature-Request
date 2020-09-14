@@ -1,0 +1,59 @@
+<div class="container maring70" *ngIf="currentFeature" >
+  <div class="row">
+    <div class="col-sm-8 offset-sm-2 ">
+      <h4>Feature</h4>
+
+      <div>
+        <form>
+          <div class="form-group">
+            <label for="title">Title</label>
+            <input [(ngModel)]="currentFeature.title" type="text" name="title" class="form-control" id="title"
+              aria-describedby="titleHelp" placeholder="Enter title" />
+
+            <label for="description"> Description</label>
+            <textarea [(ngModel)]="currentFeature.description" name="description" class="form-control" id="description"
+              aria-describedby="descHelp">
+          </textarea>
+
+            <label for="name">Client</label>
+            <select class="custom-select" id="inputGroupSelect03" [(ngModel)]="currentFeature.client" name="client">
+              <option selected>Choose...</option>
+              <option [selected]="currentFeature.client === ClientA" value="ClientA">ClientA</option>
+              <option [selected]="currentFeature.client === ClientB" value="ClientB">ClientB</option>
+              <option [selected]="currentFeature.client === ClientC" value="ClientC">ClientC</option>
+            </select>
+            <label for="name">Client Priority</label>
+            <input [(ngModel)]="currentFeature.clientPriority" type="number" name="name" class="form-control" id="name"
+              aria-describedby="nameHelp" placeholder="Enter Client Priority" />
+            <label for="description">Target Date</label>
+            <input [(ngModel)]="currentFeature.targetDate" type="date" name="targetDate" class="form-control"
+              id="targetDate" aria-describedby="titleHelp" placeholder="Enter target date" />
+            <label for="name">Client</label>
+            <select class="custom-select" id="inputGroupSelect03" [(ngModel)]="currentFeature.productArea"
+              name="productArea">
+              <option selected>Choose...</option>
+              <option [selected]="currentFeature.productArea === Policies" value="Policies">Policies</option>
+              <option [selected]="currentFeature.productArea === Billing" value="Billing">Billing</option>
+              <option [selected]="currentFeature.productArea === Claims" value="Claims">Claims</option>
+              <option [selected]="currentFeature.productArea === Reports" value="Reports">Reports</option>
+            </select>
+          </div>
+        </form>
+
+        <button class="badge badge-danger mr-2 box-space" (click)="deleteFeature()">
+          Delete
+        </button>
+
+        <button type="submit" class="badge badge-success box-space" (click)="updateFeature()">
+          Update
+        </button>
+        <p>{{ message }}</p>
+      </div>
+    </div>
+
+    <div *ngIf="!currentFeature">
+      <br />
+      <p>Cannot access this Feature...</p>
+    </div>
+  </div>
+</div>

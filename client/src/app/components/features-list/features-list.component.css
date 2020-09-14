@@ -1,0 +1,23 @@
+.list {
+  text-align: left;
+  max-width: 750px;
+  margin: auto;
+}
+
+.in-table {
+  display: inline;
+  margin: "10px";
+}
+.margin-right20 {
+  margin-right: 20px;
+}
+.spacing {
+  /* margin-right: 20px; */
+  width: 4em;
+  max-width: 290px;
+  box-sizing: border-box;
+}
+
+.margin-top90{
+  margin-top: 90px;
+}

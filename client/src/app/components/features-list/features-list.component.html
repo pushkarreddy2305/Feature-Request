@@ -1,0 +1,55 @@
+<div class="container margin-top90">
+  <!-- <div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
+      
+      <div class="input-group mb-3">
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Search by title"
+          [(ngModel)]="title"
+        />
+        <div class="input-group-append">
+          <button
+            class="btn btn-outline-secondary"
+            type="button"
+            (click)="searchTitle()"
+          >
+            Search
+          </button>
+        </div>
+      </div>
+      <div class="col-md-2"></div>
+    </div>
+  </div> -->
+  <h4>Feature Requests</h4>
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Title</th>
+        <th>Client</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let feature of features;let i=index">
+        <td> {{i+1}} </td>
+        <td>{{ feature.title }}</td>
+        <td>{{ feature.client }}</td>
+        <td >
+          <button
+            class="btn btn-primary spacing margin-right20"
+            (click)="btnClick(feature.id)"
+          >
+            View
+          </button>
+          <button class="btn btn-primary spacing" (click)="deleteFeature(feature.id)">
+            Delete
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
